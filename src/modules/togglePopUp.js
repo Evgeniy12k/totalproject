@@ -25,13 +25,13 @@ const togglePopUp = () => {
             }
         });
     }); 
-
+    const formName = document.getElementById('form3-name'),
+    formPhone = document.getElementById('form3-phone'),
+    formEmail = document.getElementById('form3-email');
     popup.addEventListener('click', (event) => {
         let target = event.target;
 
-        const formName = document.getElementById('form3-name'),
-              formPhone = document.getElementById('form3-phone'),
-              formEmail = document.getElementById('form3-email');
+       
         if(target.classList.contains('popup-close')){
             if(window.innerWidth > 768){
                 popupContent.style.opacity = '1';
@@ -65,14 +65,19 @@ const togglePopUp = () => {
         let target = event.target;
 
         if (target.classList.contains('popup')){
+            formName.value = '';
+            formPhone.value = '';
+            formEmail.value = '';
             popup.style.display = 'none';
+
 
         } else {
             target = target.closest('.popup');
-
+            
             if(!target){
                 popup.style.display = 'none';
             };
+
 
         };  
        

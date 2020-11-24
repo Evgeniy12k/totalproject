@@ -33,13 +33,15 @@ for(let i = 0; i < form.length; i++) {
                                     throw new Error('status network not 200');
                   }
                       statusMessage.textContent = successMessage;
-                   setTimeout(() => {
+                   
+                      setTimeout(() => {
                       statusMessage.textContent = '';
+                      popup.style.display = 'none';
                    },3000);
+                  
 
-                   setTimeout(() => {
-                    popup.style.display = 'none';
-                },3000);
+
+                  
                                 
                   input.forEach((elem) => {
                       elem.value = "";
@@ -70,6 +72,7 @@ for(let i = 0; i < form.length; i++) {
         }
     });
 // проверяем строки Input на правильный ввод числа
+  
     document.addEventListener('input', (event) => {
         
         let target = event.target;
