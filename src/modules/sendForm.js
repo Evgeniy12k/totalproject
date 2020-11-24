@@ -36,10 +36,13 @@ for(let i = 0; i < form.length; i++) {
                    
                       setTimeout(() => {
                       statusMessage.textContent = '';
-                      popup.style.display = 'none';
-                   },3000);
+                     
+                   },1000);
                   
-
+                   setTimeout(() => {
+                    
+                    popup.style.display = 'none';
+                 },3000);
 
                   
                                 
@@ -72,20 +75,20 @@ for(let i = 0; i < form.length; i++) {
         }
     });
 // проверяем строки Input на правильный ввод числа
-  
+  let number =3;
     document.addEventListener('input', (event) => {
         
         let target = event.target;
         if(target.matches('.form-phone')){
-            
-            target.value = target.value.replace(/[^+0-9]/gi, '');
-        } 
+            if (target.value.length > 15 && target.value.length != '' ){
+              alert('введите правильный номер') ;
+            }   
+        }  target.value = target.value.replace(/[^+0-9]{3,12}$/);
       
        
+       
          })
-         if ( target.value.length <5 || target.value.length >20 ){
-            return alert('Введите правильный номер');
-        }
+         
          
     };
    
