@@ -15,6 +15,7 @@ const sendForm = () => {
 for(let i = 0; i < form.length; i++) {
     form[i].addEventListener('submit', (event) =>{
         event.preventDefault();
+        
     form[i].appendChild(statusMessage);//добавление элемента
 //  статут загрузки 
         statusMessage.textContent = loadMessage;
